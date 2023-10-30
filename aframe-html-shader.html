@@ -1,0 +1,15 @@
+<head>
+  <title>My A-Frame Scene</title>
+  <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-html-shader@0.2.0/dist/aframe-html-shader.min.js"></script>
+</head>
+
+<body>
+  <a-scene>
+    <a-entity position="0 1 -3"  geometry="primitive: box" material="shader: html; target: #htmlElement"></a-entity>
+  </a-scene>
+
+  <div style="width: 100%; height: 100%; position: fixed; left: 0; top: 0; z-index: -1; overflow: hidden; color: red">
+    <div id="htmlElement" style="background: #F8F8F8; color: #red; font-size: 48px">こんにちは Hello, HTML!ですぞ</div>
+  </div>
+</body>
