@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene vr-mode-ui="enabled: false">
+      <!-- コントローラーを追加 -->
+      <a-entity id="controller" oculus-touch-controls="hand: right"></a-entity>
+
+      <!-- コントローラーのトリガーが引かれたときのイベントリスナー -->
+      <a-entity id="controller-listener" laser-controls="hand: right">
+        <a-cylinder id="trigger-collision" position="0 0 -5" radius="0.05" height="10" visible="false"></a-cylinder>
+        <a-event name="triggerdown" on="raycaster-intersected: #trigger-collision; raycaster-intersected: #controller" >
+          <!-- トリガーが引かれたら球体を生成 -->
+          <a-sphere id="projectile" radius="0.1" color="#FF5733"></a-sphere>
+          <!-- 球体にアニメーションを適用 -->
+          <a-animation attribute="position" begin="triggerdown" to="0 0 -10" dur="2000" easing="linear"></a-animation>
+        </a-event>
+      </a-entity>
+      
+      <!-- スカイボックス -->
+      <a-sky color="#6EBAA7"></a-sky>
+    </a-scene>
+  </body>
+</html>
