@@ -14,3 +14,6 @@ https://github.com/mayognaise/aframe-html-shader
 
 https://qiita.com/emuyuu/items/df90a011d73643b8adcb
 
+## DreamGaussian
+
+https://knb-mayumi.com/dreamgaussian/
